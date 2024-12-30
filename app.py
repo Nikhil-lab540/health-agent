@@ -9,6 +9,20 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+def hide_streamlit_style():
+    st.markdown(
+        """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+hide_streamlit_style()
+
 st.markdown("""
     <style>
     .main {
