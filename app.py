@@ -105,6 +105,7 @@ def main():
 
     with st.sidebar:
         st.header("🔑 API Configuration")
+        st.write("Or use 'AIzaSyCmk2xo13bMrxlwrpIzf20Qpgbj_9Wcklo' ")
         gemini_api_key = st.text_input(
             "Gemini API Key",
             type="password",
