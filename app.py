@@ -23,6 +23,8 @@ def hide_streamlit_style():
 
 hide_streamlit_style()
 
+
+
 st.markdown("""
     <style>
     .main {
@@ -101,7 +103,20 @@ def main():
         </div>
     """, unsafe_allow_html=True)
 
-    gemini_api_key = "AIzaSyCmk2xo13bMrxlwrpIzf20Qpgbj_9Wcklo"
+    with st.sidebar:
+        st.header("🔑 API Configuration")
+        gemini_api_key = st.text_input(
+            "Gemini API Key",
+            type="password",
+            help="Enter your Gemini API key to access the service"
+        )
+        
+        if not gemini_api_key:
+            st.warning("⚠️ Please enter your Gemini API Key to proceed")
+            st.markdown("[Get your API key here](https://aistudio.google.com/apikey)")
+            return
+        
+        st.success("API Key accepted!")
 
     if gemini_api_key:
         try:
